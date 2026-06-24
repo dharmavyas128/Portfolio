@@ -37,7 +37,7 @@ export default function App() {
   }, [])
 
   return (
-    <main className="grain relative">
+    <main className="grain relative overflow-x-hidden">
       <Cursor />
       <Nav />
       <Hero />

@@ -86,7 +86,7 @@ export default function Projects() {
       <SectionMarks index={2} />
       <div className="relative z-10 max-w-6xl mx-auto">
         <p className="reveal text-xs uppercase tracking-luxe text-gold/80 mb-6 text-center">
-          N° 02 — Selected Work
+          N° 02  Selected Work
         </p>
         <h2 className="reveal font-display text-4xl sm:text-6xl text-center font-medium mb-20">
           Things I&apos;ve <span className="italic text-gold">built</span>.

@@ -51,7 +51,7 @@ export default function About() {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <p className="reveal text-xs uppercase tracking-luxe text-gold/80 mb-16 text-center">
-          N° 01 — About
+          N° 01  About
         </p>
 
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center">

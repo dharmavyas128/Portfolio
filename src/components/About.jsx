@@ -4,6 +4,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Starfield from './Starfield'
 import SectionMarks from './SectionMarks'
+import TorchPortrait from './TorchPortrait'
+import SplitPortrait from './SplitPortrait'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -22,19 +24,6 @@ export default function About() {
         })
       })
 
-      gsap.from('.about-portrait img', {
-        scale: 1.2,
-        duration: 1.6,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: '.about-portrait', start: 'top 80%' },
-      })
-
-      gsap.from('.century-frame img', {
-        scale: 1.18,
-        duration: 1.6,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: '.century-frame', start: 'top 85%' },
-      })
     },
     { scope: root }
   )
@@ -55,14 +44,13 @@ export default function About() {
         </p>
 
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center">
-          <div className="about-portrait reveal relative rounded-2xl overflow-hidden aspect-[3/4] max-w-md mx-auto w-full">
-            <img
-              src="/photos/portrait.jpg"
-              alt="Portrait of Dharma Vyas"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl" />
-          </div>
+          <TorchPortrait
+            className="reveal"
+            frontSrc="/photos/portrait.jpg"
+            frontAlt="Portrait of Dharma Vyas"
+            backSrc="/photos/portrait-nyc.jpg"
+            backAlt="Dharma Vyas in New York City at night"
+          />
 
           <div>
             <h2 className="reveal font-display text-4xl sm:text-5xl lg:text-6xl leading-tight font-medium mb-8">
@@ -102,14 +90,14 @@ export default function About() {
 
         {/* Century moment */}
         <div className="century-block reveal mt-28 sm:mt-40 grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-center">
-          <div className="century-frame relative rounded-3xl overflow-hidden aspect-[2/3] max-w-sm mx-auto w-full">
-            <img
-              src="/photos/century.jpg"
-              alt="Dharma Vyas looking skyward in celebration after a cricket century"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl" />
-          </div>
+          <SplitPortrait
+            frontSrc="/photos/century-ground.jpg"
+            frontAlt="Dharma Vyas in celebration after a cricket century, on the real ground"
+            backSrc="/photos/century-stadium.jpg"
+            backAlt="Dharma Vyas in celebration after a cricket century, imagined in a packed stadium"
+            frameClassName="rounded-3xl aspect-[2/3] max-w-sm"
+            radiusClassName="rounded-3xl"
+          />
 
           <div className="glass rounded-3xl px-8 py-9 sm:px-10 sm:py-11 max-w-xl">
             <p className="text-xs uppercase tracking-luxe text-gold/90 mb-5">

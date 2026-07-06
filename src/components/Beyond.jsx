@@ -54,7 +54,9 @@ export default function Beyond() {
   }, [active])
 
   return (
-    <section id="beyond" ref={root} className="relative py-28 sm:py-40 px-6 beyond-bg">
+    <section id="beyond" ref={root} className="relative py-28 sm:py-40 px-6 overflow-hidden">
+      {/* morphing colour blob behind the heading */}
+      <div className="liquid-blob w-[42rem] h-[26rem] top-4 left-1/2 -translate-x-1/2" />
       <SectionMarks index={3} />
       <div className="relative z-10 max-w-6xl mx-auto">
         <p className="reveal text-xs uppercase tracking-luxe text-gold/80 mb-6 text-center">
@@ -63,7 +65,7 @@ export default function Beyond() {
         <h2 className="reveal font-display text-4xl sm:text-6xl text-center font-medium mb-6">
           The way I <span className="italic text-gold">see</span> things.
         </h2>
-        <p className="reveal max-w-xl mx-auto text-center text-bone/60 font-light text-lg mb-16">
+        <p className="reveal max-w-xl mx-auto text-center text-bone/75 font-light text-lg mb-16">
           Cricket taught me patience. Photography taught me to notice. Both show up
           in the way I build.
         </p>

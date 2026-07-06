@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Starfield from './Starfield'
 import SectionMarks from './SectionMarks'
 import TorchPortrait from './TorchPortrait'
 import SplitPortrait from './SplitPortrait'
@@ -29,34 +28,38 @@ export default function About() {
   )
 
   return (
-    <section id="about" ref={root} className="relative py-28 sm:py-40 px-6 overflow-hidden">
-      {/* Night sky backdrop */}
-      <div className="absolute inset-0 night-sky" />
-      <Starfield density={1} className="absolute inset-0 h-full w-full" />
-      {/* Soft scrim so stars sit in the margins, never fighting the text */}
+    <section id="about" ref={root} className="relative py-20 sm:py-40 px-6 overflow-hidden">
+      {/* Top cap pins the first pixels to the hero's navy — seamless handoff,
+          then the aurora glows through the transparent section */}
+      <div className="absolute top-0 inset-x-0 h-[45vh] seam-cap pointer-events-none" />
+      {/* Soft scrim keeps the copy crisp against the aurora */}
       <div className="absolute inset-0 sky-scrim" />
 
       <SectionMarks index={1} />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <p className="reveal text-xs uppercase tracking-luxe text-gold/80 mb-16 text-center">
+        <p className="reveal text-xs uppercase tracking-luxe text-gold/80 mb-10 sm:mb-16 text-center">
           N° 01  About
         </p>
 
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center">
-          <TorchPortrait
-            className="reveal"
-            frontSrc="/photos/portrait.jpg"
-            frontAlt="Portrait of Dharma Vyas"
-            backSrc="/photos/portrait-nyc.jpg"
-            backAlt="Dharma Vyas in New York City at night"
-          />
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-20 items-center">
+          <div className="relative">
+            {/* morphing colour blob floating behind the portrait */}
+            <div className="liquid-blob w-[130%] h-[110%] -top-[5%] -left-[15%]" />
+            <TorchPortrait
+              className="reveal glow-soft"
+              frontSrc="/photos/portrait.jpg"
+              frontAlt="Portrait of Dharma Vyas"
+              backSrc="/photos/portrait-nyc.jpg"
+              backAlt="Dharma Vyas in New York City at night"
+            />
+          </div>
 
-          <div>
+          <div className="glass rounded-3xl p-10 sm:p-14">
             <h2 className="reveal font-display text-4xl sm:text-5xl lg:text-6xl leading-tight font-medium mb-8">
               A builder with <span className="italic text-gold">an eye</span> for the details.
             </h2>
-            <div className="reveal space-y-5 text-bone/70 text-lg font-light leading-relaxed">
+            <div className="reveal space-y-5 text-bone/85 text-lg font-light leading-relaxed">
               <p>
                 I&apos;m Dharma — an Information Systems student at the University of
                 Maryland, Baltimore County, where I&apos;m drawn to the space where
@@ -99,7 +102,7 @@ export default function About() {
             radiusClassName="rounded-3xl"
           />
 
-          <div className="glass rounded-3xl px-8 py-9 sm:px-10 sm:py-11 max-w-xl">
+          <div className="glass glow-soft rounded-3xl px-9 py-11 sm:px-12 sm:py-14 max-w-xl">
             <p className="text-xs uppercase tracking-luxe text-gold/90 mb-5">
               A century, and a moment of stillness
             </p>
@@ -107,7 +110,7 @@ export default function About() {
               &ldquo;The best things take patience to build — and a moment to
               appreciate once they&apos;re done.&rdquo;
             </p>
-            <p className="text-bone/60 font-light leading-relaxed">
+            <p className="text-bone/80 font-light leading-relaxed">
               Scoring a hundred takes hours of focus and the discipline not to throw
               it away. Building software is the same — patience, attention, and knowing
               the small moments are where it&apos;s won.

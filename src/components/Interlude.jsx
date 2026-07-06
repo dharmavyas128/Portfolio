@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Starfield from './Starfield'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -38,9 +37,8 @@ export default function Interlude() {
   return (
     <section
       ref={root}
-      className="relative py-40 sm:py-56 px-6 overflow-hidden bg-ink"
+      className="relative py-40 sm:py-56 px-6 overflow-hidden"
     >
-      <Starfield density={0.5} className="absolute inset-0 h-full w-full" />
       {/* faint center glow + edge darkening to focus the line */}
       <div className="absolute inset-0 interlude-veil" />
 

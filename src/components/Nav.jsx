@@ -48,11 +48,8 @@ export default function Nav() {
       {/* Scroll progress line */}
       <div className="fixed top-0 left-0 right-0 z-[60] h-[2px] pointer-events-none">
         <div
-          className="h-full bg-gold origin-left will-change-transform"
-          style={{
-            transform: `scaleX(${progress})`,
-            boxShadow: '0 0 8px rgba(201, 163, 94, 0.5)',
-          }}
+          className="h-full progress-irid origin-left will-change-transform"
+          style={{ transform: `scaleX(${progress})` }}
         />
       </div>
 

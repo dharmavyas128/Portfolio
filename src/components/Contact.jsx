@@ -55,9 +55,9 @@ export default function Contact() {
           src="/photos/skyline1.jpg"
           alt=""
           aria-hidden="true"
-          className="contact-bg h-full w-full object-cover"
+          className="contact-bg contact-fade h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-ink/70 backdrop-blur-sm" />
+        <div className="absolute inset-0 contact-scrim backdrop-blur-sm" />
       </div>
 
       <SectionMarks index={4} />
@@ -69,9 +69,9 @@ export default function Contact() {
         <h2 className="reveal font-display text-5xl sm:text-7xl font-medium leading-[0.95] mb-8">
           Let&apos;s build
           <br />
-          <span className="italic text-gold">something good.</span>
+          <span className="italic text-irid">something good.</span>
         </h2>
-        <p className="reveal text-bone/70 text-lg font-light max-w-md mx-auto mb-12">
+        <p className="reveal text-bone/80 text-lg font-light max-w-md mx-auto mb-12">
           I&apos;m looking for internships where I can learn fast and ship things that
           matter. If that sounds like your team, I&apos;d love to talk.
         </p>
@@ -79,13 +79,13 @@ export default function Contact() {
         <a
           href="/Dharma-Vyas-resume.pdf"
           download
-          className="reveal inline-flex items-center gap-3 glass-strong rounded-full px-7 py-3.5 text-sm tracking-wide hover:bg-white/15 transition-colors mb-10 group"
+          className="reveal inline-flex items-center gap-3 btn-liquid rounded-full px-7 py-3.5 text-sm tracking-wide mb-10 group"
         >
           <span>Download Résumé</span>
-          <span className="text-gold group-hover:translate-y-0.5 transition-transform inline-block">↓</span>
+          <span className="group-hover:translate-y-0.5 transition-transform inline-block">↓</span>
         </a>
 
-        <div className="reveal glass-strong rounded-3xl p-6 sm:p-8">
+        <div className="reveal glass-strong glow-soft rounded-3xl p-8 sm:p-10">
           <div className="flex flex-col divide-y divide-white/10">
             {socials.map((s) => (
               <a

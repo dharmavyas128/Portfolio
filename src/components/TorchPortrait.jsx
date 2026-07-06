@@ -124,7 +124,7 @@ export default function TorchPortrait({ frontSrc, frontAlt, backSrc, backAlt, cl
         draggable="false"
         className="absolute inset-0 h-full w-full object-cover pointer-events-none will-change-transform"
       />
-      <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
+      <div className="absolute inset-0 ring-1 ring-inset ring-white/[0.06] rounded-2xl pointer-events-none" />
       <p
         ref={hintRef}
         className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-luxe text-bone/70 pointer-events-none transition-opacity duration-700"

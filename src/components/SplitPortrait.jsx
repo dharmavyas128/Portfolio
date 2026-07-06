@@ -91,7 +91,7 @@ export default function SplitPortrait({
         </div>
       </div>
 
-      <div className={`absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none ${radiusClassName}`} />
+      <div className={`absolute inset-0 ring-1 ring-inset ring-white/[0.06] pointer-events-none ${radiusClassName}`} />
 
       {!touched && (
         <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-luxe text-bone/70 pointer-events-none transition-opacity duration-700">

@@ -6,6 +6,12 @@
   --gold: #c9a35e;
   --bone: #f4f1ea;
   --ink: #0a0a0b;
+  --violet: #8b5cf6;
+  --magenta: #e879f9;
+  --cyan: #22d3ee;
+  /* One consistent hairline used on every card, the navbar, and project
+     containers. Change it here and the whole UI stays in sync. */
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -38,30 +44,220 @@ body {
   color: var(--ink);
 }
 
-/* ---------- Glassmorphism ---------- */
+/* ---------- Liquid glass material system ----------
+   Darker, cleaner frost: a solid near-navy base under a faint white sheen so
+   body text stays crisp and high-contrast over the aurora. One shared border
+   (--glass-border) across every weight. */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.015)
+    ),
+    rgba(11, 13, 24, 0.62);
+  backdrop-filter: blur(20px) saturate(135%);
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(28px) saturate(160%);
-  -webkit-backdrop-filter: blur(28px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    ),
+    rgba(9, 11, 20, 0.72);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
+/* Navbar pill — sharper and less foggy: mostly opaque, light blur, crisp edge */
 .glass-pill {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(12, 14, 25, 0.74);
+  backdrop-filter: blur(12px) saturate(125%);
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Depth shadow for feature panels — neutral, no colour bleed */
+.glow-soft {
+  box-shadow: 0 26px 70px -30px rgba(0, 0, 0, 0.75);
+}
+
+/* Iridescent gradient text for accent words */
+.text-irid {
+  background: linear-gradient(
+    100deg,
+    #e9c07f 0%,
+    #e879f9 48%,
+    #7dd7f0 95%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: irid-shift 9s ease-in-out infinite alternate;
+}
+
+@keyframes irid-shift {
+  from { background-position: 0% 0; }
+  to { background-position: 100% 0; }
+}
+
+/* Liquid gradient CTA — gold-forward with a subtle warm bloom on hover */
+.btn-liquid {
+  background: linear-gradient(120deg, #d9b56e 0%, #c9a35e 45%, #c98ec0 100%);
+  background-size: 180% 100%;
+  color: #14101f;
+  font-weight: 500;
+  box-shadow: 0 6px 26px -10px rgba(201, 163, 94, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: background-position 0.4s ease, box-shadow 0.3s ease,
+    transform 0.15s ease;
+}
+.btn-liquid:hover {
+  background-position: 100% 0;
+  box-shadow: 0 8px 34px -10px rgba(201, 163, 94, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+.btn-liquid:active {
+  transform: scale(0.97);
+}
+
+/* Nav scroll-progress line — gold, the primary accent */
+.progress-irid {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(201, 163, 94, 0.45);
+}
+
+/* ---------- Aurora backdrop (fixed, behind all sections) ---------- */
+.aurora-base {
+  /* Bottom stop is the hero night-sky navy — keeps the pinned-hero → About
+     transition seamless as the transparent sections slide up over this. */
+  background: linear-gradient(180deg, #08060f 0%, #0f0c22 50%, #0d1126 100%);
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.aurora-sheen {
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(201, 163, 94, 0.05),
+    rgba(232, 121, 249, 0.04),
+    rgba(34, 211, 238, 0.05),
+    rgba(139, 92, 246, 0.04),
+    rgba(201, 163, 94, 0.05)
+  );
+  mix-blend-mode: screen;
+  animation: sheen-turn 90s linear infinite;
+  will-change: transform;
+}
+
+@keyframes sheen-turn {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes aurora-drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(8vw, -6vh, 0) scale(1.18); }
+}
+@keyframes aurora-drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.05); }
+  50% { transform: translate3d(-10vw, 7vh, 0) scale(0.92); }
+}
+@keyframes aurora-drift-c {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(0.95); }
+  50% { transform: translate3d(6vw, 9vh, 0) scale(1.12); }
+}
+
+/* Morphing decorative blob — parked behind section headings/portraits.
+   Gold-forward and dim so it reads as ambient depth, not a purple spotlight. */
+.liquid-blob {
+  position: absolute;
+  filter: blur(54px);
+  opacity: 0.2;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 163, 94, 0.32) 0%,
+    rgba(139, 92, 246, 0.16) 60%,
+    rgba(34, 211, 238, 0.16) 100%
+  );
+  animation: liquid-morph 16s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes liquid-morph {
+  0%, 100% {
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    border-radius: 42% 58% 38% 62% / 58% 42% 60% 40%;
+    transform: rotate(10deg) scale(1.08);
+  }
+}
+
+/* Section top cap — pins About's first pixels to the hero's exact navy so
+   the pinned-hero handoff can never show a seam, then melts into the aurora */
+.seam-cap {
+  background: linear-gradient(
+    180deg,
+    #0d1126 0%,
+    rgba(13, 17, 38, 0.55) 45%,
+    rgba(13, 17, 38, 0) 100%
+  );
+}
+
+/* Contact backdrop — the skyline photo fades up out of the aurora instead of
+   cutting in with a hard opaque edge. Mask (not opacity) so the existing
+   GSAP scale-in scroll effect on .contact-bg still applies cleanly. */
+.contact-fade {
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 34%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 34%);
+}
+
+.contact-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 17, 38, 0) 0%,
+    rgba(13, 17, 38, 0.5) 16%,
+    rgba(10, 10, 11, 0.82) 48%,
+    rgba(10, 10, 11, 0.86) 100%
+  );
+}
+
+/* Beyond photo tiles — restrained gold lift on hover */
+.shot {
+  border-radius: 1rem;
+  transition: box-shadow 0.4s ease;
+}
+.shot:hover {
+  box-shadow: 0 16px 50px -16px rgba(0, 0, 0, 0.7),
+    0 4px 22px -10px rgba(201, 163, 94, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob,
+  .aurora-sheen,
+  .liquid-blob,
+  .text-irid {
+    animation: none;
+  }
 }
 
 /* ---------- Liquid glass cursor ---------- */
@@ -143,22 +339,6 @@ body {
   overflow: hidden;
 }
 
-/* ---------- Night sky backdrop (About) ---------- */
-/* Starts at deep navy so it matches the hero-night-sky bottom — no seam */
-.night-sky {
-  /* Pure vertical gradient. Top resolves to #0d1126 — matching the hero's bottom
-     for a seamless seam — and darkens downward. Deliberately no localized radial
-     glow: over a section this tall its soft falloff edge reads as a horizontal
-     band across the content. Top atmosphere comes from .orbital-atm + starfield. */
-  background: linear-gradient(
-    180deg,
-    #0d1126 0%,
-    #0d1126 30%,
-    #0a0c18 75%,
-    #0a0a0b 100%
-  );
-}
-
 /* Hero-blackout version: fades to deep navy at the bottom instead of black,
    so it aligns with the About section's top colour. */
 .hero-night-sky {
@@ -235,19 +415,14 @@ body {
   .orbital-arc { animation: none; opacity: 0.90; }
 }
 
-/* Interlude — faint warm core glow with darkened edges, focuses the line */
+/* Interlude — faint warm core glow only. No edge darkening: over the aurora a
+   vignette ring would band across the section's top and bottom edges. */
 .interlude-veil {
-  background:
-    radial-gradient(
-      60% 60% at 50% 50%,
-      rgba(201, 163, 94, 0.05) 0%,
-      rgba(10, 10, 11, 0) 55%
-    ),
-    radial-gradient(
-      120% 90% at 50% 50%,
-      rgba(10, 10, 11, 0) 50%,
-      rgba(10, 10, 11, 0.7) 100%
-    );
+  background: radial-gradient(
+    60% 55% at 50% 50%,
+    rgba(201, 163, 94, 0.06) 0%,
+    rgba(201, 163, 94, 0) 60%
+  );
   pointer-events: none;
 }
 
@@ -337,35 +512,6 @@ body {
     rgba(8, 9, 16, 0) 75%
   );
   pointer-events: none;
-}
-
-/* ---------- Projects backdrop — warm gallery spotlight ---------- */
-.projects-bg {
-  background:
-    radial-gradient(
-      ellipse 110% 60% at 50% 0%,
-      rgba(105, 72, 22, 0.55) 0%,
-      rgba(55, 38, 12, 0.28) 40%,
-      rgba(10, 10, 11, 0) 68%
-    ),
-    radial-gradient(
-      ellipse 70% 32% at 50% 100%,
-      rgba(60, 42, 12, 0.45) 0%,
-      rgba(10, 10, 11, 0) 55%
-    ),
-    #0a0a0b;
-}
-
-/* ---------- Beyond backdrop — cool dark frame for photos ---------- */
-.beyond-bg {
-  background:
-    radial-gradient(
-      ellipse 100% 48% at 50% 8%,
-      rgba(20, 26, 48, 0.85) 0%,
-      rgba(14, 16, 30, 0.4) 40%,
-      rgba(10, 10, 11, 0) 68%
-    ),
-    #0a0a0b;
 }
 
 /* ---------- Hero impact flood (ball rushing the lens) ---------- */

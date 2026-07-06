@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SectionMarks from './SectionMarks'
+import GithubActivity from './GithubActivity'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -82,7 +83,9 @@ export default function Projects() {
   )
 
   return (
-    <section id="work" ref={root} className="relative py-28 sm:py-40 px-6 projects-bg">
+    <section id="work" ref={root} className="relative py-28 sm:py-40 px-6 overflow-hidden">
+      {/* morphing colour blob behind the heading */}
+      <div className="liquid-blob w-[46rem] h-[30rem] top-0 left-1/2 -translate-x-1/2" />
       <SectionMarks index={2} />
       <div className="relative z-10 max-w-6xl mx-auto">
         <p className="reveal text-xs uppercase tracking-luxe text-gold/80 mb-6 text-center">
@@ -93,7 +96,7 @@ export default function Projects() {
         </h2>
 
         {/* Featured — Street Stumps */}
-        <article className="glass rounded-3xl overflow-hidden">
+        <article className="glass glow-soft rounded-3xl overflow-hidden">
           <div className="grid lg:grid-cols-2">
             <div className="reveal relative min-h-[340px] lg:min-h-full overflow-hidden">
               <img
@@ -116,7 +119,7 @@ export default function Projects() {
               <h3 className="reveal font-display text-4xl sm:text-5xl font-medium mb-4">
                 Street Stumps
               </h3>
-              <p className="reveal text-bone/70 text-lg font-light leading-relaxed mb-8">
+              <p className="reveal text-bone/80 text-lg font-light leading-relaxed mb-8">
                 A mobile-first cricket scoring app for casual games — built because the
                 only tool most street cricketers have is a scrap of paper. Score live,
                 share with friends, and keep the game honest.
@@ -140,7 +143,7 @@ export default function Projects() {
                   href="https://street-stumps.vercel.app"
                   target="_blank"
                   rel="noreferrer"
-                  className="glass-strong rounded-full px-6 py-3 text-sm tracking-wide hover:bg-white/15 transition-colors"
+                  className="btn-liquid rounded-full px-6 py-3 text-sm tracking-wide"
                 >
                   View live ↗
                 </a>
@@ -168,13 +171,15 @@ export default function Projects() {
                   <span className="font-display text-sm">{f.n}</span>
                 </div>
                 <h4 className="mt-3 mb-2 text-base font-medium">{f.title}</h4>
-                <p className="text-sm text-bone/60 font-light leading-relaxed">{f.body}</p>
+                <p className="text-sm text-bone/75 font-light leading-relaxed">{f.body}</p>
               </div>
             ))}
           </div>
         </article>
 
-        <p className="reveal text-center text-bone/40 text-sm mt-14 font-light">
+        <GithubActivity />
+
+        <p className="reveal text-center text-bone/40 text-sm mt-10 font-light">
           More projects in progress — the best is still being written.
         </p>
       </div>

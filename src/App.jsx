@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import AuroraBackground from './components/AuroraBackground'
 import Cursor from './components/Cursor'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -38,6 +39,8 @@ export default function App() {
 
   return (
     <main className="grain relative overflow-x-hidden">
+      {/* Liquid-light aurora — fixed behind every transparent section below the hero */}
+      <AuroraBackground />
       <Cursor />
       <Nav />
       <Hero />

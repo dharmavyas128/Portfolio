@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 const shots = [
   { src: '/photos/flame1.jpg', label: 'Aarti, in available light', span: 'row-span-2' },
   { src: '/photos/road.jpg', label: 'Backroads, golden hour', span: 'row-span-2' },
-  { src: '/photos/batting.jpg', label: 'On strike', span: '' },
+  { src: '/photos/flame2.jpg', label: 'Aarti, a moment later', span: '' },
   { src: '/photos/ocean.jpg', label: 'Last light on the water', span: '' },
   { src: '/photos/skyline2.jpg', label: 'The city, from above', span: 'col-span-2' },
 ]

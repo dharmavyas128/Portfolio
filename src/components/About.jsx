@@ -61,19 +61,19 @@ export default function About() {
             </h2>
             <div className="reveal space-y-5 text-bone/85 text-lg font-light leading-relaxed">
               <p>
-                I&apos;m Dharma — an Information Systems student at the University of
+                I&apos;m Dharma, an Information Systems student at the University of
                 Maryland, Baltimore County, where I&apos;m drawn to the space where
                 technology meets people.
               </p>
               <p>
-                I taught myself to design and ship full-stack web applications — from
+                I taught myself to design and ship full-stack web applications, from
                 real-time PostgreSQL backends to interfaces that feel effortless. I care
                 about the twenty milliseconds between a click and a response, because
                 that&apos;s where good products are quietly won.
               </p>
               <p>
                 Off the screen, I&apos;m a cricketer, a photographer, and a quiet
-                obsessive about anything built with care — whether that&apos;s a
+                obsessive about anything built with care, whether that&apos;s a
                 well-engineered car or a clean line of code.
               </p>
             </div>
@@ -107,12 +107,12 @@ export default function About() {
               A century, and a moment of stillness
             </p>
             <p className="font-display text-3xl sm:text-4xl leading-snug mb-6">
-              &ldquo;The best things take patience to build — and a moment to
+              &ldquo;The best things take patience to build, and a moment to
               appreciate once they&apos;re done.&rdquo;
             </p>
             <p className="text-bone/80 font-light leading-relaxed">
               Scoring a hundred takes hours of focus and the discipline not to throw
-              it away. Building software is the same — patience, attention, and knowing
+              it away. Building software is the same: patience, attention, and knowing
               the small moments are where it&apos;s won.
             </p>
           </div>

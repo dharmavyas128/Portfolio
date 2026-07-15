@@ -167,7 +167,7 @@ export default function GithubActivity() {
 
       {state.status === 'error' && (
         <p className="text-sm text-bone/50">
-          Couldn&apos;t load recent activity right now — see the full history on{' '}
+          Couldn&apos;t load recent activity right now. See the full history on{' '}
           <a
             href={`https://github.com/${USERNAME}`}
             target="_blank"

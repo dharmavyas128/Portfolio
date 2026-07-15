@@ -64,7 +64,7 @@ export default function Contact() {
 
       <div className="relative z-10 w-full max-w-2xl text-center">
         <p className="reveal text-xs uppercase tracking-luxe text-gold/80 mb-6">
-          N° 04 — Contact
+          N° 04  Contact
         </p>
         <h2 className="reveal font-display text-5xl sm:text-7xl font-medium leading-[0.95] mb-8">
           Let&apos;s build

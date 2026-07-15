@@ -242,7 +242,7 @@ export default function Hero() {
           <span className="inline-block">Vyas</span>
         </h1>
         <p className="hero-tag max-w-xl mt-7 text-base sm:text-lg text-bone/75 font-light text-balance">
-          I build things the same way I bat — with patience, intention,
+          I build things the same way I bat: with patience, intention,
           and an eye for the details that matter.
         </p>
       </div>

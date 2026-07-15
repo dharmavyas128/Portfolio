@@ -11,7 +11,7 @@ const features = [
   {
     n: '01',
     title: 'Real-time, ball by ball',
-    body: 'Friends watch live games update instantly through Supabase Realtime — no refresh, no waiting.',
+    body: 'Friends watch live games update instantly through Supabase Realtime. No refresh, no waiting.',
   },
   {
     n: '02',
@@ -26,7 +26,7 @@ const features = [
   {
     n: '04',
     title: 'Built for everyone',
-    body: 'Email, Google OAuth, and guest mode — plus a social friendships system to bring your crew along.',
+    body: 'Email, Google OAuth, and guest mode, plus a social friendships system to bring your crew along.',
   },
 ]
 
@@ -34,7 +34,7 @@ const mandirFeatures = [
   {
     n: '01',
     title: 'Scroll-scrubbed cinematic intro',
-    body: 'A temple video mapped frame-by-frame to scroll position via requestAnimationFrame — re-encoded all-intra to eliminate seek lag.',
+    body: 'A temple video mapped frame-by-frame to scroll position via requestAnimationFrame, re-encoded all-intra to eliminate seek lag.',
   },
   {
     n: '02',
@@ -44,12 +44,12 @@ const mandirFeatures = [
   {
     n: '03',
     title: 'Sarthi, the in-app guide',
-    body: 'A client-side keyword/fuzzy-matching chat engine — every answer is pre-written and reviewable, zero hallucination risk on sensitive content.',
+    body: 'A client-side keyword/fuzzy-matching chat engine. Every answer is pre-written and reviewable, zero hallucination risk on sensitive content.',
   },
   {
     n: '04',
     title: '"Emerald Dynasty" design system',
-    body: 'Custom glassmorphism, an animated toran and mandala motifs, built from scratch — no template, fully gated behind reduced-motion.',
+    body: 'Custom glassmorphism, an animated toran and mandala motifs, built from scratch. No template, fully gated behind reduced-motion.',
   },
 ]
 
@@ -162,7 +162,7 @@ export default function Projects() {
                 Street Stumps
               </h3>
               <p className="reveal text-bone/80 text-lg font-light leading-relaxed mb-8">
-                A mobile-first cricket scoring app for casual games — built because the
+                A mobile-first cricket scoring app for casual games, built because the
                 only tool most street cricketers have is a scrap of paper. Score live,
                 share with friends, and keep the game honest.
               </p>
@@ -225,7 +225,7 @@ export default function Projects() {
             <div className="reveal relative min-h-[340px] lg:min-h-full overflow-hidden lg:order-last">
               <img
                 src="/photos/mini-mandir.jpg"
-                alt="Kalupur Mandir, Ahmedabad — opening frame of the Mini Mandir scroll intro"
+                alt="Kalupur Mandir, Ahmedabad: opening frame of the Mini Mandir scroll intro"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-l from-transparent to-ink/40" />
@@ -245,7 +245,7 @@ export default function Projects() {
               </h3>
               <p className="reveal text-bone/80 text-lg font-light leading-relaxed mb-8">
                 A devotional web app that teaches kids the Swaminarayan Sampraday
-                tradition and the Hindi &amp; Gujarati languages — a scroll-driven
+                tradition and the Hindi &amp; Gujarati languages, a scroll-driven
                 temple video, an interactive Charan Chinh explorer, language lessons,
                 and a friendly in-app guide, all in a custom-built glass design system.
               </p>
@@ -297,7 +297,7 @@ export default function Projects() {
         <GithubActivity />
 
         <p className="reveal text-center text-bone/40 text-sm mt-10 font-light">
-          More projects in progress — the best is still being written.
+          More projects in progress. The best is still being written.
         </p>
       </div>
     </section>

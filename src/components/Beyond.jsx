@@ -60,7 +60,7 @@ export default function Beyond() {
       <SectionMarks index={3} />
       <div className="relative z-10 max-w-6xl mx-auto">
         <p className="reveal text-xs uppercase tracking-luxe text-gold/80 mb-6 text-center">
-          N° 03 — Beyond the Code
+          N° 03  Beyond the Code
         </p>
         <h2 className="reveal font-display text-4xl sm:text-6xl text-center font-medium mb-6">
           The way I <span className="italic text-gold">see</span> things.
@@ -79,7 +79,7 @@ export default function Beyond() {
               <button
                 type="button"
                 onClick={() => setActive(s)}
-                aria-label={`Enlarge photo — ${s.label}`}
+                aria-label={`Enlarge photo: ${s.label}`}
                 className="block h-full w-full rounded-2xl overflow-hidden"
               >
                 <img
